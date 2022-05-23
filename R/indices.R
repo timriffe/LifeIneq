@@ -545,6 +545,19 @@ ineq_cp <- function(age, lx, p = .5){
   age1$objective
 }
 
+#' @title calculate the non-overlap index
+#' @description Calculate Shi's non-overlap index
+#'
+#' @details The age and lx vectors must be the same length. This function estimates the shortest distance between two ages containing p percent of the life table cohort's death. The mechanics behind the function are to fit a cubic spline through the survival curve to estimate surivorship between age intervals. If your data have an upper age bound lower than 110, consider extrapolation methods, for instance a parametric Kannisto model (implemented in package 'MortalityLaws').
+
+ineq_non_overlap <- function(age, dx1, dx2){
+  
+  dx1 <- dx1 / sum(dx1)
+  dx2 <- dx2 / sum(dx2)
+  
+  1 - sum(pmin(dx1,dx2)) / sum(pmax(dx1,dx2))
+}
+
 # -------------------------------------
 # wrapper function
 
