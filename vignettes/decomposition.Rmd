@@ -40,12 +40,13 @@ variation, mean absolute deviation (MAD), and the variance.
 
 ### Additive decompositions
 
-All decompositions covered by this package are additive and follow the same general form:
+All decompositions covered by this package are additive and follow the same 
+general form:
 \begin{align*}
 \textrm{Total inequality} = \textrm{Within-component} + \textrm{Between-component}.
 \end{align*}
 For each measure of lifespan inequality, the _within-component_ is a 
-weighted sum of the given inequality measure applied to each group. That is, the 
+weighted sum of the inequality measure applied to each group. That is, the 
 within-component captures the average lifespan inequality across groups and
 thus the intra-group heterogeneity in lifespans. The between-component captures 
 how different lifespan inequality is between groups; i.e., the inter-group 
@@ -135,10 +136,10 @@ the mean absolute deviation is straightforward.
 
 Here, we use a notation often found in the economic and statistical literature 
 on inequality measurement, which makes it more easy to derive the decomposition
-of lifespan disparity, $e^\dagger$ (also called _average life lost at death_). Let $N$ be the size of the population
-under study; $Y$ is the variable capturing the length of life and $y_i$ is the
-length of life for individual $i$. Using this notation, $e^\dagger$ can be 
-written and re-arranged as follows:
+of lifespan disparity, $e^\dagger$ (also called _average life lost at death_). 
+Let $N$ be the size of the population under study; $Y$ is the variable capturing 
+the length of life and $y_i$ is the length of life for individual $i$. Using 
+this notation, $e^\dagger$ can be written and re-arranged as follows:
 \begin{align*}
 e^\dagger & = \frac{1}{N}\sum_{i=1}^N \mathrm{M}(Y|Y\geq y_i) \\ 
 & = \frac{1}{N}\sum_{k=1}^K\sum_{i=1}^{N_k} \mathrm{M}(Y|Y\geq y_{ik}) \\  
@@ -238,10 +239,10 @@ The matrices created above are passed to the `bw_decomp()` function. In addition
 to the data several other things need to be specified. The argument 'prop' 
 takes the proportion of each group. The argument 'method' can be used to choose
 between the different measures of lifespan inequality. Currently, the options
-`"theil"` (Theil T, specifically, right Christian?), `"edag"`,`"var"`,`"mld"`,`"gini"`,`"mad"`,`"aid"`, and `"H"` are supported. Finally,
-for some measures the distribution type needs to be specified; i.e., whether
-the measure should be calculated with remaining life expectancy (`"rl"`) or with
-the achieved age at death (`"aad"`).
+`"theil"` (Theil T, specifically), `"edag"`,`"var"`,`"mld"`,`"gini"`,`"mad"`,
+`"aid"`, and `"H"` are supported. Finally, for some measures the distribution 
+type needs to be specified; i.e., whether the measure should be calculated with 
+remaining life expectancy (`"rl"`) or with the achieved age at death (`"aad"`).
 
 For our example, we assume that women are close to 49% of the population at the
 radix. Choosing mean log deviation (MLD) as our measure and using the remaining 
@@ -289,8 +290,7 @@ common. For instance, @vanraalte2012 find similarly low between-components by
 education in several countries. One potential reason is that there are many 
 factors affecting mortality, and a single grouping variable alone (such as gender 
 in our example) has little predictive power; i.e., after accounting for this 
-variable still a sizeable proportion of lifespan variability remains. 
-
-[TR: maybe also cite Hal's paper here?]
+variable still a sizeable proportion of lifespan variability remains (also see 
+@caswell2023). 
 
 ## References
