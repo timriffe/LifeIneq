@@ -1,8 +1,8 @@
 Package: LifeIneq
 Type: Package
 Title: Calculate indices of lifespan variation
-Version: 00.05.01
-Date: 2024-03-11  
+Version: 00.05.02
+Date: 2024-12-11  
 Authors@R: c(
    person("Tim", "Riffe", role = c("aut","cre"), email = "tim.riffe@ehu.eus", comment = c(ORCID = "0000-0002-2673-4622")),
    person("Alyson", "van Raalte", role = c("aut"), email = "vanraalte@demogr.mpg.de", comment = c(ORCID = "0000-0002-0676-8921")),
