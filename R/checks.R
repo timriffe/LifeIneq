@@ -6,7 +6,7 @@ check_positive <- function(x){
   stopifnot(all(x > 0))
 }
 check_non_negative <- function(x){
-  stopifnot(all(x >= 0))
+  stopifnot(all(zapsmall(x >= 0)))
 }
 
 check_nas <- function(x){
@@ -14,7 +14,7 @@ check_nas <- function(x){
 }
 
 check_lx <- function(lx){
-  stopifnot(all(diff(lx) <= 0))
+  stopifnot(all(zapsmall(diff(lx)) <= 0))
   check_non_negative(x=lx)
   check_nas(x=lx)
 }
@@ -43,7 +43,7 @@ check_dx <- function(dx,lx){
 
 check_ex <- function(ex, age){
   check_non_negative(x=ex)
-  stopifnot(diff(age + ex)>= 0)
+  stopifnot(zapsmall(diff(age + ex))>= 0)
   check_nas(x=ex)
 }
 
