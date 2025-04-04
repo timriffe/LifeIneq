@@ -30,7 +30,7 @@ allows to attribute some of the variation in lifespans to variation between
 groups in the population, such as educational groups. The remaining variation
 comes from variation within the groups. 
 
-In this package, we implement several old and new decompositions of measures
+In `LifeIneq`, we implement several old and new decompositions of measures
 of lifespan inequality. This includes decompositions of lifespan disparity 
 ($e^{\dagger}$), the Gini coefficient, absolute inter-individual difference 
 (AID; also known as absolute Gini coefficient), the Theil index, mean log 
@@ -215,8 +215,8 @@ library(LifeIneq)
 data(LT)
 data(LTm)
 ```
-LT contains the life table of Canadian women in 2016, while LTm has the same 
-information for men. We will pass some of this data to the function 'bw_decomp'.
+`LT` contains the life table of Canadian women in 2016, while `LTm` has the same 
+information for men. We will pass some of this data to the function `bw_decomp()`.
 To do so, we combine the relevant information in matrices:
 ```{r data}
 age <- 0:110
@@ -225,7 +225,7 @@ dx  <- cbind(LT$dx,LTm$dx)
 lx  <- cbind(LT$lx,LTm$lx)
 ex  <- cbind(LT$ex,LTm$ex)
 ```
-For instance, the object 'lx' contains the life table column $\ell_x$ for both
+For instance, the object `lx` contains the life table column $\ell_x$ for both
 men and women. It is a matrix where each column represents one of the groups; 
 the first column has $\ell_x$ of women, and the second column has $\ell_x$ of
 men. 

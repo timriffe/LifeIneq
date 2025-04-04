@@ -6,7 +6,7 @@ check_positive <- function(x){
   stopifnot(all(x > 0))
 }
 check_non_negative <- function(x){
-  stopifnot(all(zapsmall(x >= 0)))
+  stopifnot(all(zapsmall(x) >= 0))
 }
 
 check_nas <- function(x){
@@ -22,7 +22,6 @@ check_lx <- function(lx){
 check_age <- function(age){
   stopifnot(all(diff(age) > 0))
   stopifnot(all(age >= 0))
-  stopifnot(all(diff(age) > 0))
   check_nas(x=age)
 }
 
@@ -36,7 +35,7 @@ check_ax <- function(ax,age){
 check_dx <- function(dx,lx){
   check_non_negative(x=dx)
   check_nas(x=dx)
-  # ensure reasonabl;y constrained dx and lx
+  # ensure reasonably constrained dx and lx
   stopifnot(sum(dx) / lx[1] > .9999 &
             lx[1] / sum(dx) > .9999 )
 }

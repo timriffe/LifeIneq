@@ -1,6 +1,7 @@
 
 library(devtools)
-run_examples()
+build_vignettes()
+run_examples(document = FALSE,run_dontrun=TRUE)
 document()
 check(vignettes = FALSE)
 devtools::test()
